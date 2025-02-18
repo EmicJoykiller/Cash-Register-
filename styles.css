@@ -1,155 +1,138 @@
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   
+  /* Color Palette */
   :root {
-    --light-gray: #dfdfe2;
-    --dark-blue: #0a0a23;
+    --bg-color: #f5f5f7;
+    --text-color: #1d1d1f;
+    --accent-color: #0071e3;
+    --input-bg: #eaeaea;
+    --border-color: #d2d2d7;
+    --shadow: rgba(0, 0, 0, 0.1);
   }
   
+  /* Body Styling */
   body {
-    background-color: var(--dark-blue);
-    color: var(--light-gray);
-  }
-  
-  main {
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 40px 10px;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
   }
   
-  .freecodecamp-logo {
-    width: 100%;
-    height: 30px;
+  /* Main Container */
+  main {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 20px var(--shadow);
+    animation: fadeIn 1s ease;
+  }
+  
+  /* Heading */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+  }
+  
+  /* Input Section */
+  .input-div {
     margin-bottom: 20px;
   }
   
-  h1 {
-    font-size: 2.5rem;
-    margin: 20px 0;
-    text-align: center;
-  }
-  
-  #change-due {
-    text-align: left;
-    font-size: 1.2rem;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .input-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 10px 0 20px;
-  }
-  
-  label {
-    font-size: 18px;
-  }
-  
   .user-input {
-    height: 30px;
+    width: 80%;
     padding: 10px;
-    margin: 10px;
-    font-size: 15px;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--input-bg);
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
   }
   
-  .price-screen {
-    border: 10px solid #99c9ff;
-    background-color: black;
-    height: 50px;
-    width: 200px;
-    margin-left: -40px;
-    color: white;
-    font-size: 1.2rem;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  .user-input:focus {
+    box-shadow: 0 0 8px var(--accent-color);
   }
   
-  #price {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  .connector {
-    margin-left: -20px;
-    background-color: #99c9ff;
-    height: 30px;
-    width: 40px;
-  }
-  
-  .top-register {
-    display: flex;
-    justify-content: space-around;
-    border-radius: 35px 35px 0 0;
-    padding-top: 20px;
-    background-color: #99c9ff;
-    height: 250px;
-    width: 325px;
-  }
-  
-  .btns-container {
-    width: 25%;
-  }
-  
-  .btn {
-    border-radius: 10%;
-    border: none;
-    width: 20px;
-    height: 20px;
-    background-color: black;
-  }
-  
+  /* Button Styles */
   .check-btn-styles {
     cursor: pointer;
-    width: 100px;
-    height: 30px;
-    margin: 10px;
-    color: #0a0a23;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #feac32;
-    background-image: linear-gradient(#fecc4c, #ffac33);
-    border-color: #feac32;
-    border-width: 3px;
-  }
-  
-  .cash-drawer-display {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: var(--accent-color);
+    color: white;
     font-size: 1.1rem;
-    background-color: white;
-    width: 55%;
-    height: 95%;
-    color: black;
-    padding: 10px;
-  }
-  
-  .bottom-register {
-    background-color: #99c9ff;
-    height: 50px;
-    width: 325px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow);
     margin-top: 10px;
   }
   
-  .circle {
-    margin: 15px auto;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: black;
+  .check-btn-styles:hover {
+    transform: translateY(-5px);
   }
+  
+  /* Register Container */
+  .register-container {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background: #f2f2f7;
+    box-shadow: 0 5px 15px var(--shadow);
+    animation: slideUp 1s ease;
+  }
+  
+  .price-screen {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+  }
+  
+  .cash-drawer {
+    text-align: left;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  /* Change Due Section */
+  .change-due {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
